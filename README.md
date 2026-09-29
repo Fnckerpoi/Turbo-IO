@@ -22,6 +22,8 @@
 
 **Android 新发行：[完整插件 APK + TAP1-TEST-01 固件](https://github.com/Turbo1123/Turbo-IO/releases/tag/android-105-guard07-tap1-test01) · [从安装到刷写的逐步教程](android-addon/docs/INSTALL_AND_FLASH.md)**。Fold3 / Android15 的官方升级路径已实刷成功；公开APK移除微信读书网页正文适配，保留书架和TXT阅读。**刷后必须只读回查并解除结果保护，否则安卓官方功能仍会被拦截。** 实验用品，非开发者请勿刷，不保证不会损坏设备。
 
+**原厂固件备份：[Strix OS 1.0.4.12 原厂负载归档](https://github.com/Turbo1123/Turbo-IO/releases/tag/stock-strix-1.0.4.12-archive) · [如何恢复原厂／什么时候不能恢复](firmware-research/strix-1.0.4.12/stock/README.md)**。原厂负载与清单未修改，ZIP 重新封装；不是服务器原始 ZIP、整机备份或救砖保证。优先走官方提供的兼容更新；**当前公开 APK 不支持直接导入此归档进行同版本恢复**，不要绕过候选校验。
+
 **开发者新入口：[仪表盘与小应用 SDK 完整教程](docs/DEVELOPER_ECOSYSTEM.md) · [20 个 MCP 应用模板 / ZIP](app-gallery/README.md) · [自托管 API](dashboard-service/README.md) · [Agent 开发 Skill](skills/turboio-developer/SKILL.md)**
 
 MCP 在**用户自己的 Server** 上运行，眼镜不运行 MCP、浏览器或任意 JS。后端取数 → SDK 生成卡片或有界原生应用 → 手机确认 → 眼镜显示。公开模板均为离线示例，不附带账号、Key 或已授权在线服务；真机需要匹配的 TCE1/TAP1 运行时，旧 FOCUS-04 不自动兼容。
