@@ -8,7 +8,7 @@
 
 原创代码仅供学习、研究与非商业使用，沿用 [PolyForm Noncommercial 1.0.0](LICENSE)，未经授权不得商用或收费分发。除源码及明确列出的依赖，Release 提供原厂砸壳 IPA 作为 iOS 扩展输入，以及下述 **Android 1.0.5 非官方完整插件 APK / 高风险实验固件**。原厂部分版权仍归各自权利人，不因分发修改包而重新许可。**不提供个人密钥、Cookie、账号、签名私钥，亦不提供合并后的 IPA / HAP**；第三方服务由用户自行配置。
 
-**文档更新：2026-09-29** · 日期表示文档整理或所注明的实测记录，不代表当天全量回归。
+**文档更新：2026-09-30** · 日期表示文档整理或所注明的实测记录，不代表当天全量回归。
 
 **[Android APK / 固件下载](https://github.com/Turbo1123/Turbo-IO/releases/tag/android-105-guard07-tap1-test01) · [Android 安装与刷机](android-addon/docs/INSTALL_AND_FLASH.md) · [iOS 源码与构建](official-addon/README.md) · [☕ 自愿支持项目](#support)**
 
@@ -57,6 +57,7 @@ MCP 在**用户自己的 Server** 上运行，眼镜不运行 MCP、浏览器或
 
 | 日期 | 更新 | 公开范围 |
 | --- | --- | --- |
+| 2026-09-30 | [TLC1：全天智记与扩展应用共存](#lifelog-coexist) | 六个扩展应用共存判断、可复现构建与测试、原样实刷固件及 iOS OTA 参考；仅 AP 改动，刷后须结束手机升级保护 |
 | 2026-09-29 | [Apple Watch 遥控实验源码与 TGR1 固件](#apple-watch-remote) | Watch 表冠/屏幕/手势、iOS 桥接、TGR1 AP 输入适配与原样实验 OTA；已知翻页问题未闭环，不含签名包 |
 | 2026-09-27 | [Android 1.0.5 完整插件与官方流程 OTA](#android-release-update) | 去除网页正文适配的完整APK、扩展源码、TAP1-TEST-01原样实刷固件、校验与逐步教程；高风险实验版 |
 | 2026-09-26 | [开发者生态：应用广场、仪表盘与 App SDK](#developer-ecosystem) | 自托管 API / Python / MCP、20 个离线模板 ZIP、Agent Skill、协议参考源码；配套完整固件不在本次发布内 |
@@ -68,6 +69,18 @@ MCP 在**用户自己的 Server** 上运行，眼镜不运行 MCP、浏览器或
 | 2026-09-22 | [ANIM60 本地动图](#animation-test) | 动图实验源码与独立固件候选；非通用动图上传 |
 
 > **自定义固件是试验用品，非开发者请勿刷。** AP 改动仍可能导致无法启动或失去 OTA；不要混用不同候选的固件、手机门禁或授权。原厂回滚不是救砖保证。实机成功不等于生产稳定版。
+
+<a id="lifelog-coexist"></a>
+
+### 2026-09-30 · TLC1：开着全天智记，也能进入扩展应用
+
+修复开启官方「全天智记」后，导航、音乐、读书、番茄、滴滴和小应用可能无法从眼镜菜单进入的问题。**不关闭智记、不重写原厂录音，只调整六个扩展的共存判断；相对 TGR1 的 AP 增加 192 字节。** 原厂前台占用与助手活动检查保留，不包含 TBL1 亮度实验补丁。
+
+**[源码、复现与刷写说明](firmware-research/strix-1.0.4.12/lifelog-coexist/README.md) · [下载 TLC1 固件 / SHA-256 / 审计](https://github.com/Turbo1123/Turbo-IO/releases/tag/firmware-strix-1.0.4.12-tlc1)**
+
+用户已确认智记开启时其他应用可进入，并在升级保护收尾说明后确认本轮音乐显示正常；持续采集、音频共存、反复抬头和长期稳定性仍需测试。**确认眼镜升级完成、自然回首页后，必须彻底退出重开手机雷鸟 App，结束本次进程内升级保护，否则音乐等内容可能无法同步。升级未完成或状态不明时不可强停。**
+
+实验固件，非开发者不要刷，回滚不保证救砖。只改 AP 内容，但仍为完整 OTA；其他 13 个负载不变。提供定向源码与 iOS OTA 参考，不提供私用 IPA、凭据或新的 TLC1 Android APK；旧 GUARD-07 APK 不能直接刷本包。TGR1 的 Watch 全局翻页已知问题不因此解决。
 
 <a id="apple-watch-remote"></a>
 
